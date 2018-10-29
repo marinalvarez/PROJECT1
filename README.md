@@ -1,10 +1,17 @@
 # PROJECT1
-//This code is a simple version of the Simon says game, , which was installed into a punching bag. The user has to remember the sequence the punching bag shows him and repeat it. You can add levels to increase the difficulty.
+//This code is a simple version of the Simon says game, which was installed into a punching bag. The user has to remember the sequence the punching bag shows him and repeat it. You can add levels to increase the difficulty.
 
 const int MAX_LEVEL = 100;  //Maximum game level
+
+
 int sequence[MAX_LEVEL];
+
+
 int your_sequence[MAX_LEVEL];
+
+
 int level = 1;   //Level starts in 1
+
 
 int velocity = 1000;    //Value to increase or decrease difficulty, the time leds stay in high or low mode changes
 
