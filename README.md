@@ -15,26 +15,47 @@ int level = 1;   //Level starts in 1
 
 int velocity = 1000;    //Value to increase or decrease difficulty, the time leds stay in high or low mode changes
 
+
 void setup() {    //In this void the different leds (outouts) and buttons pins (input) are stablish. Also, it is too the inicial leds state, low.
  
   pinMode(A0, INPUT);
+  
+  
   pinMode(A1, INPUT);
+  
+  
   pinMode(A2, INPUT);
+  
+  
   pinMode(A3, INPUT);
 
   pinMode(2, OUTPUT);
+  
+  
   pinMode(3, OUTPUT);
+  
+  
   pinMode(4, OUTPUT);
+  
+  
   pinMode(5, OUTPUT);
 
   digitalWrite(2, LOW);
+  
+  
   digitalWrite(3, LOW);
+  
+  
   digitalWrite(4, LOW);
+  
+  
   digitalWrite(5, LOW);
 }
 
 void loop()   //In this void it is summarised the basic functioning of the programme 
 {
+
+
   if (level == 1) 
     generate_sequence();  //Firstly, the game generates a sequence (functions are better explained after)
 
