@@ -57,25 +57,39 @@ void loop()   //In this void it is summarised the basic functioning of the progr
 
 
   if (level == 1) 
+  
+  
     generate_sequence();  //Firstly, the game generates a sequence (functions are better explained after)
 
+
   if (digitalRead(A4) == LOW || level != 1) //Lights are off start button is pressed OR you're winning because you have accomplished the level (you stay in the loop)
+  
+  
   {
     show_sequence();    //Afterwords,it shows the user the sequence by turning on lights
     get_sequence();     //Last, the programme waits for the user sequence to be introduced, and it decides what to do depending on if the introduced sequence is right or wrong
+    
+    
   }
 }
 
 void show_sequence()  //This void is the one showing the sequence. It turns the lights off and only turns on the light of the sequence in order. 
 {
-  digitalWrite(2, LOW); //
+  digitalWrite(2, LOW); 
+  
+  
   digitalWrite(3, LOW);
+  
+  
   digitalWrite(4, LOW);
+  
+  
   digitalWrite(5, LOW);
+  
 
   for (int i = 0; i < level; i++) //Searchs in the sequence vector the random values up to the one you are in. As you increase the level it will show more lights. 
   {  
-    digitalWrite(sequence[i], HIGH); //Turns on the led to the corresponding possition of the vector 
+    digitalWrite(sequence[i], HIGH); //Turns on the led to the corresponding possition of the vector
     delay(velocity);
     digitalWrite(sequence[i], LOW);  //Turns off the led to the corresponding possition of the vector
     delay(200);  // If you are in a level over 1, it has a delay between each light
