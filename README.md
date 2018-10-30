@@ -120,7 +120,6 @@ void get_sequence() //This void is the one gathering together the users' answer
         }
         digitalWrite(2, LOW); //Light number 2 turns off
       }
-
     }
   }
   right_sequence(); //If the sequence marked correspond to the Arduino sequence, it is right (game keeps on, so does the loop)
