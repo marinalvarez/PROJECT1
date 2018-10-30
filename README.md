@@ -2,66 +2,29 @@
 //This code is a simple version of the Simon says game, which was installed into a punching bag. The user has to remember the sequence the punching bag shows him and repeat it. You can add levels to increase the difficulty.
 
 const int MAX_LEVEL = 100;  //Maximum game level
-
-
 int sequence[MAX_LEVEL];
-
-
 int your_sequence[MAX_LEVEL];
-
-
 int level = 1;   //Level starts in 1
-
-
 int velocity = 1000;    //Value to increase or decrease difficulty, the time leds stay in high or low mode changes
-
-
 void setup() {    //In this void the different leds (outouts) and buttons pins (input) are stablish. Also, it is too the inicial leds state, low.
  
   pinMode(A0, INPUT);
-  
-  
   pinMode(A1, INPUT);
-  
-  
   pinMode(A2, INPUT);
-  
-  
   pinMode(A3, INPUT);
-
   pinMode(2, OUTPUT);
-  
-  
   pinMode(3, OUTPUT);
-  
-  
-  pinMode(4, OUTPUT);
-  
-  
+  pinMode(4, OUTPUT); 
   pinMode(5, OUTPUT);
-
   digitalWrite(2, LOW);
-  
-  
-  digitalWrite(3, LOW);
-  
-  
+  digitalWrite(3, LOW); 
   digitalWrite(4, LOW);
-  
-  
   digitalWrite(5, LOW);
 }
-
 void loop()   //In this void it is summarised the basic functioning of the programme 
 {
-
-
   if (level == 1) 
-  
-  
     generate_sequence();  //Firstly, the game generates a sequence (functions are better explained after)
-
-
   if (digitalRead(A4) == LOW || level != 1) //Lights are off start button is pressed OR you're winning because you have accomplished the level (you stay in the loop)
   
   
@@ -118,7 +81,6 @@ void get_sequence() //This void is the one gathering together the users' answer
         }
         digitalWrite(5, LOW); //Light number 5 turns off
       }
-
       if (digitalRead(A1) == LOW) //If The user hits button number 1
       {
         digitalWrite(4, HIGH);  //Light number 4 has to turn on
@@ -132,7 +94,6 @@ void get_sequence() //This void is the one gathering together the users' answer
         }
         digitalWrite(4, LOW); //Light number 4 turns off
       }
-
       if (digitalRead(A2) == LOW) //If The user hits button number 2
       {
         digitalWrite(3, HIGH);  //Light number 3 has to turn on
@@ -146,7 +107,6 @@ void get_sequence() //This void is the one gathering together the users' answer
         }
         digitalWrite(3, LOW); //Light number 3 turns off
       }
-
       if (digitalRead(A3) == LOW) //If The user hits button number 3
       {
         digitalWrite(2, HIGH);  //Light number 2 has to turn on
